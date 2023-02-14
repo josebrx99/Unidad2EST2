@@ -13,6 +13,12 @@ Este paquete esta en su versión de construcción, por tanto se encontrará
 alojado en GitHub durante su etapa de elaboración.
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("josebrx99/Unidad2EST2")
+library(devtools)
+devtools::install_github("josebrx99/Unidad2EST2", force = TRUE)
+```
+
+## Tutoriales
+``` r
+library(Unidad2EST2)
+learnr::run_tutorial(name = "Conceptos", package = "Unidad2EST2")
 ```

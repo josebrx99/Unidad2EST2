@@ -16,8 +16,7 @@ runtime: shiny_prerendered
 knitr::opts_chunk$set(echo = TRUE, comment = NA)
 library(learnr)
 library(ggplot2)
-knitr::opts_chunk$set(echo = FALSE,
-                 exercise.warn_invisible = FALSE)
+knitr::opts_chunk$set(echo = FALSE, exercise.warn_invisible = FALSE)
 # colores
 c1="#FF7F00" # NARANJA COLOR PRINCIPAL
 c2="#034a94" # AZUL FUERTE COLOR SECUNDARIO  
