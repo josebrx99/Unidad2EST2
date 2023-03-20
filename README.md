@@ -7,7 +7,7 @@
 
 Tutorial de sobre conceptos basicos Unidad 2 del curso "Metodos estadisticos y simulacion"
 
-## InstalaciC3n
+## Instalacion
 
 Este paquete esta en su version de construccion, por lo tanto se encontrara alojado en GitHub durante su etapa de elaboracion.
 
