@@ -13,14 +13,14 @@ Este paquete esta en su version de construccion, por lo tanto se encontrara aloj
 
 ``` r
 library(devtools)
-devtools::install_github("josebrx99/Unidad2EST2", force = TRUE)
+devtools::install_github("josebrx99/Unidad2EST2", force = TRUE, upgrade = TRUE)
 ```
 
 ## Tutoriales
 
 Este paquete cuenta con los siguientes tutoriales: \\
-* conceptos: conceptos b??sicos de estad??stica. \\
-* ACP: an??lisis de componentes principales
+* Conceptos: conceptos basicos de estadistica. \\
+* ACP: analisis de componentes principales
 
 ``` r
 library(Unidad2EST2)

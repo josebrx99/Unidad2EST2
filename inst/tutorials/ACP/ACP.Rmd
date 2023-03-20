@@ -74,7 +74,7 @@ quiz(
            answer("Datos cualitativos nominales", message = "No, pero no...intentalo de nuevo!"),
            answer("Datos en escala de intervalo", message = "No...intentalo de nuevo!"),
            answer("Solo datos cuantitativos discretos", message = "Incorrecto. Intenta de nuevo!."),
-           answer("Cuantitativos, tanto continuos como discretos",  correct = TRUE),
+           answer("Datos cuantitativos, tanto continuos como discretos",  correct = TRUE),
            submit_button = "Enviar respuesta",
            try_again_button = "Intentar de nuevo"),
   caption = " "
@@ -105,7 +105,7 @@ quiz(
 
 ```{r q4}
 quiz(
-  question("¿Qué es la inercia ó varianza explicada?" , 
+  question("¿Qué es la inercia o varianza explicada?" , 
            correct = "", 
            allow_retry = TRUE,
            answer("Es el porcentaje de correlación parcial de cada par de variables del conjunto de datos", message = "No, pero no...intentalo de nuevo!"),
@@ -127,7 +127,7 @@ quiz(
   question("¿Qué relación existe entre las variables originales y las componentes principales" , 
            correct = "", 
            allow_retry = TRUE,
-           answer("Las componentes principales son modelos de regresión calculados mediante las variables originales", message = "No, pero no...intentalo de nuevo!"),
+           answer("Las componentes principales son los valores ajustados de los modelos de regresión calculados mediante las variables originales", message = "No, pero no...intentalo de nuevo!"),
            answer("Las componentes principales son una productoria de la matriz de correlaciones", message = "No...intentalo de nuevo!"),
            answer("Las variables originales se pueden obtener realizando producto punto entre las componentes principales", message = "Incorrecto. Intenta de nuevo!."),
            answer("Las componentes principales son combinaciones lineales de las variables originales estandarizadas", correct = TRUE),
@@ -159,7 +159,7 @@ quiz(
 
 ### **Pregunta 7**
 
-La siguiente representación simultanea proviene del ACP calculado sobre la base de datos USArrests el cual viene por defecto en R, las variables están dadas en tasas las cuales son Urbanpop (cantidad de población urbana), Assault (asaltos), Murder (asesinatos) y Rape (secuestros), para 50 estados de Estados Unidos.
+La siguiente representación simultanea proviene del ACP calculado sobre la base de datos USArrests la cual viene por defecto en R, las variables son Urbanpop (cantidad de población urbana), Assault (asaltos), Murder (asesinatos) y Rape (secuestros), estás tres ultimas variables están dadas en tasas por cada 100.000 habitantes.
 
 <center>
 ```{r, echo=FALSE, out.width="80%", fig.align = "center"}
@@ -186,7 +186,7 @@ quiz(
 ## **PROBLEMAS**
 
 ### **Problema 1**
-Se tienen los siguientes datos::
+Este tutorial cuenta con la base de datos "beer2" (la cual se puede acceder mediante la función data("beer2")), se cuenta con 69 marcas de cervezas con las variables precio, cantidad de calorias y porcentaje de alcohol:
 
 ```{r}
 data("beer2")
@@ -199,12 +199,12 @@ beer2
 
 ```
 ```{r p1-hint}
-
-dudi.pca()
+library(ade4); library(factoextra)
+ACP = dudi.pca()
 ```
 ```{r p1-solution}
-
-ACP = dudi.pca(beer, scannf=FALSE, center = TRUE, scale = TRUE)
+library(ade4); library(factoextra)
+ACP = dudi.pca(beer2, scannf=FALSE, center = TRUE, scale = TRUE)
 ```
 
 
@@ -212,9 +212,8 @@ ACP = dudi.pca(beer, scannf=FALSE, center = TRUE, scale = TRUE)
 **Encuentre los valores propios asociados a la matriz de correlaciones:**
 
 ```{r p0, exercise=TRUE, exercise.lines = 5}
-data("beer2")
-ACP = dudi.pca(beer, scannf=FALSE, center = TRUE, scale = TRUE)
-
+ACP = dudi.pca(beer2, scannf=FALSE, center = TRUE, scale = TRUE) #no borrar este codigo
+#escribe aqui tu codigo
 ```
 ```{r p0-hint}
 Object$eig
@@ -226,8 +225,7 @@ ACP$eig
 **Calcule las componentes principales de los individuos:**
 
 ```{r p2, exercise=TRUE, exercise.lines = 5}
-data("beer2")
-ACP = dudi.pca(beer, scannf=FALSE, center = TRUE, scale = TRUE)
+ACP = dudi.pca(beer2, scannf=FALSE, center = TRUE, scale = TRUE)
 
 ```
 ```{r p2-hint}
@@ -241,8 +239,7 @@ ACP$li
 **Calcule las componentes principales de las variables:**
 
 ```{r p3, exercise=TRUE, exercise.lines = 5}
-data("beer2")
-ACP = dudi.pca(beer, scannf=FALSE, center = TRUE, scale = TRUE)
+ACP = dudi.pca(beer2, scannf=FALSE, center = TRUE, scale = TRUE)
 
 ```
 ```{r p3-hint}
@@ -253,10 +250,9 @@ ACP$co
 ```
 
 ### **Problema 1.4**
-**Represente el circulo de correlaciones: (representación de variables)**
+**Represente el circulo de correlaciones (representación de variables):**
 ```{r p5, exercise=TRUE, exercise.lines = 5}
-data("beer2")
-ACP = dudi.pca(beer, scannf=FALSE, center = TRUE, scale = TRUE)
+ACP = dudi.pca(beer2, scannf=FALSE, center = TRUE, scale = TRUE)
 
 ```
 ```{r p5-hint}
@@ -291,7 +287,7 @@ quiz(
            allow_retry = TRUE,
            answer("La cantidad de calorias está altamente correlacionada con el porcentaje de alcohol", correct = TRUE),
            answer("A medida que aumentan las calorias el porcentaje de alcohol va a disminuir", message = "No, pero no...intentalo de nuevo!"),
-           answer("A medida que aumente el precio la cantidad de calorias van a disminuir", message = "Incorrecto. Intenta de nuevo!."),
+           answer("A medida que aumente el precio la cantidad de calorias va a disminuir", message = "Incorrecto. Intenta de nuevo!."),
            answer("Ninguna de las variables está relacionada", message = "No...intentalo de nuevo!"),
            submit_button = "Enviar respuesta",
            try_again_button = "Intentar de nuevo"),
@@ -302,8 +298,7 @@ quiz(
 ### **Problema 1.7**
 **Muestre la representación simultanea de individuos y variables en el primer plano factorial**
 ```{r p6, exercise=TRUE, exercise.lines = 5}
-data("beer2")
-ACP = dudi.pca(beer, scannf=FALSE, center = TRUE, scale = TRUE)
+ACP = dudi.pca(beer2, scannf=FALSE, center = TRUE, scale = TRUE)
 
 ```
 ```{r p6-hint}
@@ -320,7 +315,7 @@ quiz(
            allow_retry = TRUE,
            answer("Las cervezas 21, 23, 26 y 40 tienen los precios más bajos y la cantidad de calorias más altas.", message = "No...intentalo de nuevo!"),
            answer("La cerveza 18 tiene precios muy altos, además de cantidad de calorias y porcentaje de alcohol bajos.", message = "No, pero no...intentalo de nuevo!"),
-           answer("Altos porcentajes de alcohol están relacionados con precios muy bajos", message = "Incorrecto. Intenta de nuevo!."),
+           answer("Altos porcentajes de alcohol están relacionados con precios y calorias muy bajos", message = "Incorrecto. Intenta de nuevo!."),
            answer("Las cervezas 63, 64, 65, 66 y 67 se caracterizan por tener la menor cantidad de calorias y porcentaje de alcohol", correct = TRUE),
            submit_button = "Enviar respuesta",
            try_again_button = "Intentar de nuevo"),
@@ -329,17 +324,23 @@ quiz(
 
 ```
 
+### **Problema 1.8**
+A continuación se muestran las contribuciones de las variables a las componentes principales:
 
-
+```{r}
+ACP = dudi.pca(beer2, scannf=FALSE, center = TRUE, scale = TRUE)
+inercia.ACP = inertia.dudi(ACP,row.inertia=TRUE, col.inertia=TRUE)
+inercia.ACP$col.abs
+```
 ```{r q11}
 quiz(
-  question("" , 
+  question("De acuerdo a las contribuciones anteriores es CORRECTO afirmar que:" , 
            correct = "", 
            allow_retry = TRUE,
-           answer("", correct = TRUE),
-           answer("", message = "No, pero no...intentalo de nuevo!"),
-           answer("", message = "Incorrecto. Intenta de nuevo!."),
-           answer("", message = "No...intentalo de nuevo!"),
+           answer("La variable que más aporta a la varianza total de la primera componente es el precio ", message = "Incorrecto. Intenta de nuevo!."),
+           answer("La variable que más aporta a la varianza total de la segunda componente son las calorias", message = "No, pero no...intentalo de nuevo!"),
+           answer("La variable que más aporta a la varianza total de la primera componente son las calorias", correct = TRUE),
+           answer("Todas variables aportan la misma varianza explicada a la primera componente", message = "No...intentalo de nuevo!"),
            submit_button = "Enviar respuesta",
            try_again_button = "Intentar de nuevo"),
   caption = " "
@@ -349,21 +350,7 @@ quiz(
 
 
 
-```{r q12}
-quiz(
-  question("" , 
-           correct = "", 
-           allow_retry = TRUE,
-           answer("", correct = TRUE),
-           answer("", message = "No, pero no...intentalo de nuevo!"),
-           answer("", message = "Incorrecto. Intenta de nuevo!."),
-           answer("", message = "No...intentalo de nuevo!"),
-           submit_button = "Enviar respuesta",
-           try_again_button = "Intentar de nuevo"),
-  caption = " "
-)
 
-```
 
 
 
