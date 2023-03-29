@@ -317,8 +317,7 @@ data-diagnostics="1" data-startover="1" data-lines="5">
 <div class="tutorial-exercise-support" data-label="p5-hint"
 data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0">
-<pre class="text"><code>km &lt;- kmeans()
-fviz_cluster()</code></pre>
+<pre class="text"><code>fviz_cluster()</code></pre>
 </div>
 <div class="tutorial-exercise-support" data-label="p5-solution"
 data-completion="1" data-diagnostics="1" data-startover="1"
@@ -344,7 +343,44 @@ fviz_pca_biplot()</code></pre>
 <div class="tutorial-exercise-support" data-label="p6-solution"
 data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0">
-<pre class="text"><code>ACP = dudi.pca(animals, scannf=FALSE, center = TRUE, scale = TRUE)</code></pre>
+<pre class="text"><code>ACP = dudi.pca(animals, scannf=FALSE, center = TRUE, scale = TRUE)
+fviz_pca_biplot(ACP)</code></pre>
+</div>
+</div>
+<div id="section-problema-1.6" class="section level3">
+<h3><strong>Problema 1.6</strong></h3>
+<div class="panel-heading tutorial-quiz-title"></div>
+<div class="panel panel-default tutorial-question-container">
+<div data-label="q8-1" class="tutorial-question panel-body">
+<div id="q8-1-answer_container" class="shiny-html-output"></div>
+<div id="q8-1-message_container" class="shiny-html-output"></div>
+<div id="q8-1-action_button_container" class="shiny-html-output"></div>
+<script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
+</div>
+</div>
+</div>
+<div id="section-problema-1.7" class="section level3">
+<h3><strong>Problema 1.7</strong></h3>
+<div class="panel-heading tutorial-quiz-title"></div>
+<div class="panel panel-default tutorial-question-container">
+<div data-label="q9-1" class="tutorial-question panel-body">
+<div id="q9-1-answer_container" class="shiny-html-output"></div>
+<div id="q9-1-message_container" class="shiny-html-output"></div>
+<div id="q9-1-action_button_container" class="shiny-html-output"></div>
+<script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
+</div>
+</div>
+</div>
+<div id="section-problema-1.7-1" class="section level3">
+<h3><strong>Problema 1.7</strong></h3>
+<div class="panel-heading tutorial-quiz-title"></div>
+<div class="panel panel-default tutorial-question-container">
+<div data-label="q10-1" class="tutorial-question panel-body">
+<div id="q10-1-answer_container" class="shiny-html-output"></div>
+<div id="q10-1-message_container" class="shiny-html-output"></div>
+<div id="q10-1-action_button_container" class="shiny-html-output"></div>
+<script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
+</div>
 </div>
 <p>
 <script type="application/shiny-prerendered" data-context="server-start">
@@ -393,22 +429,22 @@ session$onSessionEnded(function() {
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "q1-1", question = structure("¿Cuál es el objetivo principal del análisis de conglomerados?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_2cb87d1", 
+"character")), answers = list(structure(list(id = "lnr_ans_d5ad1ca", 
     option = "Emplear técnicas de mineria de datos para encontrar componentes principales", 
     value = "Emplear técnicas de mineria de datos para encontrar componentes principales", 
     label = structure("Emplear técnicas de mineria de datos para encontrar componentes principales", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_3b8482f", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_3f778ec", 
     option = "Agrupar objetos similares en categorías o clusters basándose en su similitud y diferencias en sus características o variables.", 
     value = "Agrupar objetos similares en categorías o clusters basándose en su similitud y diferencias en sus características o variables.", 
     label = structure("Agrupar objetos similares en categorías o clusters basándose en su similitud y diferencias en sus características o variables.", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_da67fe1", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_92a3ebe", 
     option = "Agrupar objetos de acuerdo a su disimilitud", value = "Agrupar objetos de acuerdo a su disimilitud", 
     label = structure("Agrupar objetos de acuerdo a su disimilitud", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Incorrecto. Intenta de nuevo!.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_994fd37", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_ab64bfc", 
     option = "Analizar los errores de un modelo de regresión lineal", 
     value = "Analizar los errores de un modelo de regresión lineal", 
     label = structure("Analizar los errores de un modelo de regresión lineal", html = TRUE, class = c("html", 
@@ -421,7 +457,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "q1-1-answer", question = "q1-1"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = TRUE, seed = 904191418.578953, 
+    random_answer_order = FALSE, allow_retry = TRUE, seed = 1098020006.98869, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
@@ -429,21 +465,21 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "q2-1", question = structure("¿Qué tipos de datos se pueden analizar con el análisis de conglomerados?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_80f4641", 
+"character")), answers = list(structure(list(id = "lnr_ans_4cb88f2", 
     option = "Datos cuantitativos y cualitativos", value = "Datos cuantitativos y cualitativos", 
     label = structure("Datos cuantitativos y cualitativos", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_d05391f", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_d1383ac", 
     option = "Solo datos cuantitativos contintuos", value = "Solo datos cuantitativos contintuos", 
     label = structure("Solo datos cuantitativos contintuos", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("No…intentalo de nuevo!", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_84039d5", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_a3ab3a7", 
     option = "Solo datos cuantitativos discretos", value = "Solo datos cuantitativos discretos", 
     label = structure("Solo datos cuantitativos discretos", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Incorrecto. Intenta de nuevo!.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_9671004", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_2a2fe12", 
     option = "Solo datos cualitativos", value = "Solo datos cualitativos", 
     label = structure("Solo datos cualitativos", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("No, pero no…intentalo de nuevo!", html = TRUE, class = c("html", 
@@ -455,32 +491,32 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "q2-1-answer", question = "q2-1"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = TRUE, seed = 706228621.171137, 
+    random_answer_order = FALSE, allow_retry = TRUE, seed = 85351271.9602552, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "q3-1", question = structure("¿Qué es la medida de similitud en el análisis de conglomerados?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_3decd59", 
+"character")), answers = list(structure(list(id = "lnr_ans_b458cca", 
     option = "Es una medida númerica que mide la correlación entre dos individuos", 
     value = "Es una medida númerica que mide la correlación entre dos individuos", 
     label = structure("Es una medida númerica que mide la correlación entre dos individuos", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("No…intentalo de nuevo!", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_dc51661", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_82416c3", 
     option = "Es una medida en escala de intervalo que permite evaluar la similitud entre dos objetos o grupos", 
     value = "Es una medida en escala de intervalo que permite evaluar la similitud entre dos objetos o grupos", 
     label = structure("Es una medida en escala de intervalo que permite evaluar la similitud entre dos objetos o grupos", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("No, pero no…intentalo de nuevo!", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_257f4ad", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_70a0fe", 
     option = "Es una medida de bondad de ajuste del análisis de conglomerados", 
     value = "Es una medida de bondad de ajuste del análisis de conglomerados", 
     label = structure("Es una medida de bondad de ajuste del análisis de conglomerados", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Incorrecto. Intenta de nuevo!.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_86de714", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_39a2776", 
     option = "Es una medida numérica para evaluar la similitud o diferencia entre dos objetos o grupos", 
     value = "Es una medida numérica para evaluar la similitud o diferencia entre dos objetos o grupos", 
     label = structure("Es una medida numérica para evaluar la similitud o diferencia entre dos objetos o grupos", html = TRUE, class = c("html", 
@@ -492,7 +528,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "q3-1-answer", question = "q3-1"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = TRUE, seed = 1635277112.73851, 
+    random_answer_order = FALSE, allow_retry = TRUE, seed = 1259268774.41361, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
@@ -500,24 +536,24 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "q4-1", question = structure("¿Qué son los dendrogramas y cómo se interpretan?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_130669e", 
+"character")), answers = list(structure(list(id = "lnr_ans_4a4289c", 
     option = "Es un tipo de diagrama de árbol utilizado para representar las correlaciones entre los n individuos de la muestra.\n                  ", 
     value = "Es un tipo de diagrama de árbol utilizado para representar las correlaciones entre los n individuos de la muestra.\n                  ", 
     label = structure("Es un tipo de diagrama de árbol utilizado para representar las correlaciones entre los n individuos de la muestra.", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("No, pero no…intentalo de nuevo!", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_d438a43", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_57a9a07", 
     option = "Es un tipo de diagrama de árbol utilizado para representar la relación jerárquica entre las variables y los individuos, facilitando la selección de un número k de clusters", 
     value = "Es un tipo de diagrama de árbol utilizado para representar la relación jerárquica entre las variables y los individuos, facilitando la selección de un número k de clusters", 
     label = structure("Es un tipo de diagrama de árbol utilizado para representar la relación jerárquica entre las variables y los individuos, facilitando la selección de un número k de clusters", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Incorrecto. Intenta de nuevo!.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_16e00ae", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_7941bd", 
     option = "Es un tipo de diagrama de árbol utilizado para representar la relación jerárquica entre los grupos y para ayudar en la selección del número óptimo de grupos.\n", 
     value = "Es un tipo de diagrama de árbol utilizado para representar la relación jerárquica entre los grupos y para ayudar en la selección del número óptimo de grupos.\n", 
     label = structure("Es un tipo de diagrama de árbol utilizado para representar la relación jerárquica entre los grupos y para ayudar en la selección del número óptimo de grupos.", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_8bce960", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_910a20f", 
     option = "Es un tipo de diagrama de bosques que ayuda a visualizar el aporte de cada variable a un modelo de regresión", 
     value = "Es un tipo de diagrama de bosques que ayuda a visualizar el aporte de cada variable a un modelo de regresión", 
     label = structure("Es un tipo de diagrama de bosques que ayuda a visualizar el aporte de cada variable a un modelo de regresión", html = TRUE, class = c("html", 
@@ -530,32 +566,32 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "q4-1-answer", question = "q4-1"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = TRUE, seed = 960161692.05289, 
+    random_answer_order = FALSE, allow_retry = TRUE, seed = 936484614.063915, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "q5-1", question = structure("¿Cúal es el objetivo de los k-means?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_8d8c9a6", 
+"character")), answers = list(structure(list(id = "lnr_ans_ee45273", 
     option = "Dividir un conjunto de datos en k grupos de tal manera que la suma de las distancias cuadradas entre los objetos y el centroide de su grupo correspondiente sea máxima", 
     value = "Dividir un conjunto de datos en k grupos de tal manera que la suma de las distancias cuadradas entre los objetos y el centroide de su grupo correspondiente sea máxima", 
     label = structure("Dividir un conjunto de datos en k grupos de tal manera que la suma de las distancias cuadradas entre los objetos y el centroide de su grupo correspondiente sea máxima", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("No, pero no…intentalo de nuevo!", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_fbe1c2b", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_a05dd70", 
     option = "Calcular un diagrama de arbol que permitirá saber el número óptimo de grupos a utilizar", 
     value = "Calcular un diagrama de arbol que permitirá saber el número óptimo de grupos a utilizar", 
     label = structure("Calcular un diagrama de arbol que permitirá saber el número óptimo de grupos a utilizar", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("No…intentalo de nuevo!", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_3958085", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_4362448", 
     option = "Calcular las componentes principales para así representar la nube de individuos y el circulo de correlaciones", 
     value = "Calcular las componentes principales para así representar la nube de individuos y el circulo de correlaciones", 
     label = structure("Calcular las componentes principales para así representar la nube de individuos y el circulo de correlaciones", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Incorrecto. Intenta de nuevo!.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_73a41e2", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_f457ce5", 
     option = "Dividir un conjunto de datos en k grupos de tal manera que la suma de las distancias cuadradas entre los objetos y el centroide de su grupo correspondiente sea mínima", 
     value = "Dividir un conjunto de datos en k grupos de tal manera que la suma de las distancias cuadradas entre los objetos y el centroide de su grupo correspondiente sea mínima", 
     label = structure("Dividir un conjunto de datos en k grupos de tal manera que la suma de las distancias cuadradas entre los objetos y el centroide de su grupo correspondiente sea mínima", html = TRUE, class = c("html", 
@@ -567,7 +603,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "q5-1-answer", question = "q5-1"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = TRUE, seed = 2121390487.01215, 
+    random_answer_order = FALSE, allow_retry = TRUE, seed = 1583571641.26259, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
@@ -575,18 +611,18 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "q6-1", question = structure("¿Cúal es el número óptimo de grupos a calcular?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_a9899f5", 
+"character")), answers = list(structure(list(id = "lnr_ans_f05f0e9", 
     option = "5", value = "5", label = structure("5", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("No, pero no…intentalo de nuevo!", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_274ff29", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_583f57f", 
     option = "2", value = "2", label = structure("2", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_75023fc", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_6535a49", 
     option = "4", value = "4", label = structure("4", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Incorrecto. Intenta de nuevo!.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_406d65e", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_5b8130c", 
     option = "3", value = "3", label = structure("3", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("No…intentalo de nuevo!", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
@@ -597,7 +633,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "q6-1-answer", question = "q6-1"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = TRUE, seed = 681755312.182533, 
+    random_answer_order = FALSE, allow_retry = TRUE, seed = 1987929753.0743, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
@@ -701,18 +737,18 @@ learnr:::store_exercise_cache(structure(list(label = "p2", global_setup = struct
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "q7-1", question = structure("¿De acuerdo al criterio del mayor salto de nodo a nodo de las distancias euclidianas cual es el número de grupos optimo?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_52aa595", 
+"character")), answers = list(structure(list(id = "lnr_ans_94817f5", 
     option = "10", value = "10", label = structure("10", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("No, pero no…intentalo de nuevo!", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_5b30cb5", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_ce61090", 
     option = "3", value = "3", label = structure("3", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_6beb930", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_5bf0ba0", 
     option = "4", value = "4", label = structure("4", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Incorrecto. Intenta de nuevo!.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_5165018", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_ab7558", 
     option = "5", value = "5", label = structure("5", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("No…intentalo de nuevo!", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
@@ -723,7 +759,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "q7-1-answer", question = "q7-1"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = TRUE, seed = 53505510.4750846, 
+    random_answer_order = FALSE, allow_retry = TRUE, seed = 927691547.06801, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
@@ -895,15 +931,16 @@ learnr:::store_exercise_cache(structure(list(label = "p6", global_setup = struct
     chunks = list(list(label = "p6", code = "\n", opts = list(
         label = "\"p6\"", exercise = "TRUE", exercise.lines = "5"), 
         engine = "r")), code_check = NULL, error_check = NULL, 
-    check = NULL, solution = structure("ACP = dudi.pca(animals, scannf=FALSE, center = TRUE, scale = TRUE)", chunk_opts = list(
-        label = "p6-solution")), tests = NULL, options = list(
-        eval = FALSE, echo = TRUE, results = "markup", tidy = FALSE, 
-        tidy.opts = NULL, collapse = FALSE, prompt = FALSE, comment = NA, 
-        highlight = FALSE, size = "normalsize", background = "#F7F7F7", 
-        strip.white = TRUE, cache = 0, cache.path = "Conglomerados_cache/html/", 
-        cache.vars = NULL, cache.lazy = TRUE, dependson = NULL, 
-        autodep = FALSE, cache.rebuild = FALSE, fig.keep = "high", 
-        fig.show = "asis", fig.align = "default", fig.path = "Conglomerados_files/figure-html/", 
+    check = NULL, solution = structure(c("ACP = dudi.pca(animals, scannf=FALSE, center = TRUE, scale = TRUE)", 
+    "fviz_pca_biplot(ACP)"), chunk_opts = list(label = "p6-solution")), 
+    tests = NULL, options = list(eval = FALSE, echo = TRUE, results = "markup", 
+        tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
+        comment = NA, highlight = FALSE, size = "normalsize", 
+        background = "#F7F7F7", strip.white = TRUE, cache = 0, 
+        cache.path = "Conglomerados_cache/html/", cache.vars = NULL, 
+        cache.lazy = TRUE, dependson = NULL, autodep = FALSE, 
+        cache.rebuild = FALSE, fig.keep = "high", fig.show = "asis", 
+        fig.align = "default", fig.path = "Conglomerados_files/figure-html/", 
         dev = "png", dev.args = NULL, dpi = 192, fig.ext = "png", 
         fig.width = 6.5, fig.height = 4, fig.env = "figure", 
         fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
@@ -918,6 +955,118 @@ learnr:::store_exercise_cache(structure(list(label = "p6", global_setup = struct
         fig.num = 0L, exercise.df_print = "paged", exercise.checker = "NULL"), 
     engine = "r", version = "4"), class = c("r", "tutorial_exercise"
 )))
+</script>
+
+
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "q8-1", question = structure("De acuerdo al análisis de conglomerados se puede concluir que el grupo 1 (conformado por Hippo, Horse, Orangutan, Monkey, etc) se puede decir que este grupo se caracteriza por:", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_20fff78", 
+    option = "Tener bajos porcentajes de agua y grasa, y altos porcentajes de lactosa y proteina", 
+    value = "Tener bajos porcentajes de agua y grasa, y altos porcentajes de lactosa y proteina", 
+    label = structure("Tener bajos porcentajes de agua y grasa, y altos porcentajes de lactosa y proteina", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = structure("No, pero no…intentalo de nuevo!", html = TRUE, class = c("html", 
+    "character")), type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_a8df257", 
+    option = "Tener bajos porcentajes de agua y lactosa, y altos porcentajes de grasa y proteina", 
+    value = "Tener bajos porcentajes de agua y lactosa, y altos porcentajes de grasa y proteina", 
+    label = structure("Tener bajos porcentajes de agua y lactosa, y altos porcentajes de grasa y proteina", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = structure("No…intentalo de nuevo!", html = TRUE, class = c("html", 
+    "character")), type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_aaeb257", 
+    option = "Tener bajos porcentajes de agua y lactosa, y bajos porcentajes de grasa y proteina", 
+    value = "Tener bajos porcentajes de agua y lactosa, y bajos porcentajes de grasa y proteina", 
+    label = structure("Tener bajos porcentajes de agua y lactosa, y bajos porcentajes de grasa y proteina", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = structure("Incorrecto. Intenta de nuevo!.", html = TRUE, class = c("html", 
+    "character")), type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_509f71e", 
+    option = "Tener altos porcentajes de agua y lactosa, y bajos porcentajes de grasa y proteina", 
+    value = "Tener altos porcentajes de agua y lactosa, y bajos porcentajes de grasa y proteina", 
+    label = structure("Tener altos porcentajes de agua y lactosa, y bajos porcentajes de grasa y proteina", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer"))), button_labels = list(submit = structure("Enviar respuesta", html = TRUE, class = c("html", 
+"character")), try_again = structure("Intentar de nuevo", html = TRUE, class = c("html", 
+"character"))), messages = list(correct = structure("", html = TRUE, class = c("html", 
+"character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), message = NULL, post_message = NULL), ids = list(
+    answer = "q8-1-answer", question = "q8-1"), loading = NULL, 
+    random_answer_order = FALSE, allow_retry = TRUE, seed = 701261911.67345, 
+    options = list()), class = c("learnr_radio", "tutorial_question"
+)), session = session)
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "q9-1", question = structure("De acuerdo al análisis de conglomerados se puede concluir que el grupo 2 (conformado por Whale, Seal, Dolphin, etc) se puede decir que este grupo se caracteriza por:", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_e34691b", 
+    option = "Tener bajos porcentajes de grasa y proteina, y bajos porcentajes de agua y lactosa", 
+    value = "Tener bajos porcentajes de grasa y proteina, y bajos porcentajes de agua y lactosa", 
+    label = structure("Tener bajos porcentajes de grasa y proteina, y bajos porcentajes de agua y lactosa", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = structure("No, pero no…intentalo de nuevo!", html = TRUE, class = c("html", 
+    "character")), type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_a031c19", 
+    option = "Tener bajos porcentajes de grasa y proteina, y altos porcentajes de agua y lactosa", 
+    value = "Tener bajos porcentajes de grasa y proteina, y altos porcentajes de agua y lactosa", 
+    label = structure("Tener bajos porcentajes de grasa y proteina, y altos porcentajes de agua y lactosa", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = structure("No…intentalo de nuevo!", html = TRUE, class = c("html", 
+    "character")), type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_19fb00b", 
+    option = "Tener altos porcentajes de agua y bajos de lactosa", 
+    value = "Tener altos porcentajes de agua y bajos de lactosa", 
+    label = structure("Tener altos porcentajes de agua y bajos de lactosa", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = structure("Incorrecto. Intenta de nuevo!.", html = TRUE, class = c("html", 
+    "character")), type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_bf24213", 
+    option = "Tener altos porcentajes de grasa y proteina, y bajos porcentajes de agua y lactosa", 
+    value = "Tener altos porcentajes de grasa y proteina, y bajos porcentajes de agua y lactosa", 
+    label = structure("Tener altos porcentajes de grasa y proteina, y bajos porcentajes de agua y lactosa", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer"))), button_labels = list(submit = structure("Enviar respuesta", html = TRUE, class = c("html", 
+"character")), try_again = structure("Intentar de nuevo", html = TRUE, class = c("html", 
+"character"))), messages = list(correct = structure("", html = TRUE, class = c("html", 
+"character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), message = NULL, post_message = NULL), ids = list(
+    answer = "q9-1-answer", question = "q9-1"), loading = NULL, 
+    random_answer_order = FALSE, allow_retry = TRUE, seed = 325742078.348315, 
+    options = list()), class = c("learnr_radio", "tutorial_question"
+)), session = session)
+</script>
+
+
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "q10-1", question = structure("De acuerdo al análisis de conglomerados se puede concluir que el grupo 3 (conformado por Buffalo, Guinea Pig, Dog, etc) se puede decir que este grupo se caracteriza por:", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_8afeeaf", 
+    option = "Tener porcentajes promedio en todas las variables", 
+    value = "Tener porcentajes promedio en todas las variables", 
+    label = structure("Tener porcentajes promedio en todas las variables", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_697a32c", 
+    option = "Tener muy altos porcentajes en todas las variables", 
+    value = "Tener muy altos porcentajes en todas las variables", 
+    label = structure("Tener muy altos porcentajes en todas las variables", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = structure("No…intentalo de nuevo!", html = TRUE, class = c("html", 
+    "character")), type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_5eb72b6", 
+    option = "Tener altos porcentajes tanto en agua como en grasa", 
+    value = "Tener altos porcentajes tanto en agua como en grasa", 
+    label = structure("Tener altos porcentajes tanto en agua como en grasa", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = structure("Incorrecto. Intenta de nuevo!.", html = TRUE, class = c("html", 
+    "character")), type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_8d37a6a", 
+    option = "Ninguna de las anteriores", value = "Ninguna de las anteriores", 
+    label = structure("Ninguna de las anteriores", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = structure("No, pero no…intentalo de nuevo!", html = TRUE, class = c("html", 
+    "character")), type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer"))), button_labels = list(submit = structure("Enviar respuesta", html = TRUE, class = c("html", 
+"character")), try_again = structure("Intentar de nuevo", html = TRUE, class = c("html", 
+"character"))), messages = list(correct = structure("", html = TRUE, class = c("html", 
+"character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), message = NULL, post_message = NULL), ids = list(
+    answer = "q10-1-answer", question = "q10-1"), loading = NULL, 
+    random_answer_order = FALSE, allow_retry = TRUE, seed = 589575648.225457, 
+    options = list()), class = c("learnr_radio", "tutorial_question"
+)), session = session)
 </script>
 </p>
 <!--html_preserve-->
