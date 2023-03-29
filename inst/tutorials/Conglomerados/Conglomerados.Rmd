@@ -167,7 +167,7 @@ quiz(
 ```
 
 ## **PROBLEMAS**
-Esta tutorial cuenta con un conjunto de datos al cual se puede acceder mediante la función *data("animals")*, esta cuenta con un total de 25 especies de animales y cinco variables en porcentaje sobre la constituyen de la leche de estos animales las cuales son: <br>
+Esta tutorial cuenta con un conjunto de datos al cual se puede acceder mediante la función data("animals"), esta cuenta con un total de 25 especies de animales y cinco variables en porcentaje sobre la constituyen de la leche de estos animales las cuales son: <br>
 -water: porcentaje de agua. <br>
 -protein: porcentaje de proteina.  <br>
 -fat: porcentaje de grasa. <br>
@@ -180,20 +180,18 @@ animals
 ```
 ### **Problema 1**
 
-**Mediante la libreria factoextra calcule el dendograma del conjunto de datos, primero calcule las distancias euclidianas mediante la funcion dist y despues el dendograma con la funcion hclust**
+**Calcule el dendograma del conjunto de datos, primero calcule las distancias euclidianas mediante la funcion dist y despues el dendograma con la funcion hclust**
 
 ```{r p1, exercise=TRUE, exercise.lines = 5}
 
 ```
 ```{r p1-hint}
-library(factoextra)
 distancias <- dist( , method = "euclidean")
 dendograma <- hclust( , method = "average")
 ```
 ```{r p1-solution}
-library(factoextra)
 distancias <- dist(animals, method = "euclidean")
-dendograma <- hclust(animals, method = "average")
+dendograma <- hclust(distancias, method = "average")
 ```
 
 ### **Problema 1.1**
@@ -201,6 +199,8 @@ dendograma <- hclust(animals, method = "average")
 **Represente el dendograma anteriormente calculado**
 
 ```{r p2, exercise=TRUE, exercise.lines = 5}
+distancias <- dist(animals, method = "euclidean") 
+dendograma <- hclust(distancias, method = "average")  #no borrar estas lineas
 
 ```
 ```{r p2-hint}
@@ -254,8 +254,8 @@ km <- kmeans()
 km$
 ```
 ```{r p4-solution}
-km <- kmeans(x = animals, centers = 3)
-km$clusters
+km <- kmeans(x = animals, centers = 3)  #no borrar esta linea
+km$cluster
 ```
 
 ### **Problema 1.4**
@@ -263,15 +263,13 @@ km$clusters
 **Represente gráficamente la nube de individuos y los clusters mediante la función fviz_cluster de la libreria factoextra**
 
 ```{r p5, exercise=TRUE, exercise.lines = 5}
-km <- kmeans(x = animals, centers = 3)
+km <- kmeans(x = animals, centers = 3)  #no borrar esta linea
 
 ```
 ```{r p5-hint}
-km <- kmeans()
-km$
+fviz_cluster()
 ```
 ```{r p5-solution}
-km <- kmeans(x = animals, centers = 3)
 fviz_cluster(object = km, data = animals)
 ```
 
@@ -280,22 +278,68 @@ fviz_cluster(object = km, data = animals)
 **Calcule el ACP correpondiente al conjunto de datos y grafique la representación simultanea de individuos y variables mediante la libreria ade4**
 
 ```{r p6, exercise=TRUE, exercise.lines = 5}
-ACP = dudi.pca(animals, scannf=FALSE, center = TRUE, scale = TRUE)
+
 
 ```
 ```{r p6-hint}
+ACP = dudi.pca()
 fviz_pca_biplot()
 ```
 ```{r p6-solution}
+ACP = dudi.pca(animals, scannf=FALSE, center = TRUE, scale = TRUE)
 fviz_pca_biplot(ACP)
 ```
 
+### **Problema 1.6**
+```{r q8}
+quiz(
+  question("De acuerdo al análisis de conglomerados se puede concluir que el grupo 1 (conformado por Hippo, Horse, Orangutan, Monkey, etc) se puede decir que este grupo se caracteriza por:" , 
+           correct = "", 
+           allow_retry = TRUE,
+           answer("Tener bajos porcentajes de agua y grasa, y altos porcentajes de lactosa y proteina", message = "No, pero no...intentalo de nuevo!"),
+           answer("Tener bajos porcentajes de agua y lactosa, y altos porcentajes de grasa y proteina",  message = "No...intentalo de nuevo!"),
+           answer("Tener bajos porcentajes de agua y lactosa, y bajos porcentajes de grasa y proteina", message = "Incorrecto. Intenta de nuevo!."),
+           answer("Tener altos porcentajes de agua y lactosa, y bajos porcentajes de grasa y proteina", correct = TRUE),
+           submit_button = "Enviar respuesta",
+           try_again_button = "Intentar de nuevo"),
+  caption = " "
+)
 
+```
 
+### **Problema 1.7**
+```{r q9}
+quiz(
+  question("De acuerdo al análisis de conglomerados se puede concluir que el grupo 2 (conformado por Whale, Seal, Dolphin, etc) se puede decir que este grupo se caracteriza por:" , 
+           correct = "", 
+           allow_retry = TRUE,
+           answer("Tener bajos porcentajes de grasa y proteina, y bajos porcentajes de agua y lactosa", message = "No, pero no...intentalo de nuevo!"),
+           answer("Tener bajos porcentajes de grasa y proteina, y altos porcentajes de agua y lactosa",  message = "No...intentalo de nuevo!"),
+           answer("Tener altos porcentajes de agua y bajos de lactosa", message = "Incorrecto. Intenta de nuevo!."),
+           answer("Tener altos porcentajes de grasa y proteina, y bajos porcentajes de agua y lactosa", correct = TRUE),
+           submit_button = "Enviar respuesta",
+           try_again_button = "Intentar de nuevo"),
+  caption = " "
+)
 
+```
 
+### **Problema 1.7**
+```{r q10}
+quiz(
+  question("De acuerdo al análisis de conglomerados se puede concluir que el grupo 3 (conformado por Buffalo, Guinea Pig, Dog, etc) se puede decir que este grupo se caracteriza por:" , 
+           correct = "", 
+           allow_retry = TRUE,
+           answer("Tener porcentajes promedio en todas las variables", correct = TRUE),
+           answer("Tener muy altos porcentajes en todas las variables", message = "No...intentalo de nuevo!"),
+           answer("Tener altos porcentajes tanto en agua como en grasa", message = "Incorrecto. Intenta de nuevo!."),
+           answer("Ninguna de las anteriores", message = "No, pero no...intentalo de nuevo!"),
+           submit_button = "Enviar respuesta",
+           try_again_button = "Intentar de nuevo"),
+  caption = " "
+)
 
-
+```
 
 
 
