@@ -32,6 +32,11 @@ library(Unidad2EST2)
 learnr::run_tutorial(name = "ACP", package = "Unidad2EST2")
 ```
 
+**Conglomerados: analisis de conglomerados**
+``` r
+library(Unidad2EST2)
+learnr::run_tutorial(name = "Conglomerados", package = "Unidad2EST2")
+```
 
 
 
