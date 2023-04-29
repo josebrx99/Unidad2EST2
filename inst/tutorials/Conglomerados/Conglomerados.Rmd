@@ -246,15 +246,13 @@ km <- kmeans(x = animals, centers = 3)
 **Muestre los clusters encontrados en el punto anterior**
 
 ```{r p4, exercise=TRUE, exercise.lines = 5}
-km <- kmeans(x = animals, centers = 3)
+km <- kmeans(x = animals, centers = 3)  #no borrar esta linea
 
 ```
 ```{r p4-hint}
-km <- kmeans()
 km$
 ```
 ```{r p4-solution}
-km <- kmeans(x = animals, centers = 3)  #no borrar esta linea
 km$cluster
 ```
 

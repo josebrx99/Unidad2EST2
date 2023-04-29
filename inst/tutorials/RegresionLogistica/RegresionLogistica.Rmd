@@ -1,0 +1,228 @@
+---
+title: "**REGRESIÓN LOGÍSTICA**"
+author: Modelos estadísticos para la toma de decisiones
+output: 
+  learnr::tutorial:
+    css: css/learnr_metadocencia.css
+    progressive: true # los encabezados de tercer nivel (###) son revelados progresivamente
+    allow_skip: true # permite saltearse los ejercicios. 
+    language:
+      es: tutorial_es.json
+description: "Tutorial interactivo conceptos básicos de probabilidad" # Esta descripción se ve en el panel Tutorial de RStudio 
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, comment = NA)
+library(learnr); library(ggplot2); library(ade4); library(factoextra); library(Unidad2EST2)
+knitr::opts_chunk$set(echo = FALSE,
+                 exercise.warn_invisible = FALSE)
+# colores
+c1="#FF7F00" # NARANJA COLOR PRINCIPAL
+c2="#034a94" # AZUL FUERTE COLOR SECUNDARIO  
+c3="#0eb0c6" # AZUL CLARO COLOR TERCEARIO  
+c4="#686868" # GRIS COLOR TEXTO 
+#library(PerformanceAnalytics)
+#library(patchwork)
+#-----------------------------------------------
+Theme1= theme(axis.text.x = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title.x = element_text(size = 12),
+        axis.title.y = element_text(size = 12))
+
+#-------------------------------------------------------------------------
+
+##  <div class="content-box-blue">    </div> ## caja azul
+```
+
+## **PRESENTACIÓN**
+
+El presente tutorial contiene preguntas relacionadas con la regresión logística.
+
+</br>
+
+## **CUESTIONARIO**
+
+### **Pregunta 1**
+
+```{r q1}
+quiz(
+  question("¿En qué casos se puede aplicar la regresión logística?" , 
+           correct = "", 
+           allow_retry = TRUE,
+           answer("En los que la variable respuesta es continua en los reales", message = "No, pero no...intentalo de nuevo!"),
+           answer("En los que la variable respuesta es binaria (dicotomica)",  correct = TRUE),
+           answer("En los que la variable respuesta es discreta en los enteros positivos", message = "Incorrecto. Intenta de nuevo!."),
+           answer("En los que la variable respuesta está en escala de intervalo", message = "No...intentalo de nuevo!"),
+           submit_button = "Enviar respuesta",
+           try_again_button = "Intentar de nuevo"),
+  caption = " "
+)
+```
+
+### **Pregunta 2**
+
+```{r q2}
+quiz(
+  question("¿Cuál es la diferencia entre la regresión lineal y la regresión logística?" , 
+           correct = "", 
+           allow_retry = TRUE,
+           answer("En la regresión lineal la variable respuesta es binaria, mientras que en la logística es continua", message = "No, pero no...intentalo de nuevo!"),
+           answer("En la regresión lineal se usa una sola covariable para explicar la variable respuesta, mientras que en la logística se puede usar más de una", message = "No...intentalo de nuevo!"),
+           answer("En la regresión lineal la variable respuesta es continua, mientras que en la logística es binaria", message = "Incorrecto. Intenta de nuevo!."),
+           answer("En la regresión lineal la variable respuesta es continua, mientras que en la logística toma números complejos", correct = TRUE),
+           submit_button = "Enviar respuesta",
+           try_again_button = "Intentar de nuevo"),
+  caption = " "
+)
+```
+
+### **Pregunta 3**
+
+```{r q3}
+quiz(
+  question("¿Cómo se evalúa la regresión logística para determinar la calidad de ajuste del modelo?", 
+           correct = "", 
+           allow_retry = TRUE,
+           answer("Mediante la matriz de confusión y la devianza residual", correct = TRUE),
+           answer("Mediante la matriz de correlaciones de las variables", message = "No, pero no...intentalo de nuevo!"),
+           answer("Mediante los coeficientes de regresión", message = "Incorrecto. Intenta de nuevo!."),
+           answer("Ninguna de las anteriores", message = "No...intentalo de nuevo!"),
+           submit_button = "Enviar respuesta",
+           try_again_button = "Intentar de nuevo"),
+  caption = " "
+)
+```
+
+### **Pregunta 4**
+
+```{r q4}
+quiz(
+  question("¿Qué es la matriz de confusión?" , 
+           correct = "", 
+           allow_retry = TRUE,
+           answer("Es una matriz que está conformada por los coeficientes de regresión", message = "No, pero no...intentalo de nuevo!"),
+           answer("Es una tabla que muestra el número de verdaderos positivos, verdaderos negativos, falsos positivos y falsos negativos que el modelo ha predicho en comparación con los valores reales.",  correct = TRUE),
+           answer("Sirve ara evaluar el rendimiento de un modelo de clasificación binaria en diferentes umbrales de probabilidad", message = "Incorrecto. Intenta de nuevo!."),
+           answer("Es una matriz que sirve para calcular los coeficientes de regresión", message = "No...intentalo de nuevo!"),
+           submit_button = "Enviar respuesta",
+           try_again_button = "Intentar de nuevo"),
+  caption = " "
+)
+```
+
+### **Pregunta 5**
+
+```{r q5}
+quiz(
+  question("¿Cómo se interpretan los coeficientes en la regresión logística?" , 
+           correct = "", 
+           allow_retry = TRUE,
+           answer("Calculando la exponencial de estos se pueden interpretar como el aumento o disminución de la variable respuesta por cada unidad que aumente la variable predictora", message = "No, pero no...intentalo de nuevo!"),
+           answer("Calculando la exponencial de estos se pueden interpretar como un factor multiplicativo que afecta a la variable respuesta por cada unidad que aumente la variable predictora", message = "No, pero no...intentalo de nuevo!",  correct = TRUE),
+           answer("Se pueden interpretar directamente como un factor multiplicativo que afecta a la variable predictora por cada unidad que aumente la variable respuesta", message = "Incorrecto. Intenta de nuevo!."),
+           answer("Se pueden interpretar directamente como un factor multiplicativo que afecta a la variable respuesta por cada unidad que aumente la variable predictora", message = "No...intentalo de nuevo!"),
+           submit_button = "Enviar respuesta",
+           try_again_button = "Intentar de nuevo"),
+  caption = " "
+)
+```
+
+### **Pregunta 6**
+
+```{r q6}
+quiz(
+  question("¿Cuales son los supuestos de la regresión logística?" , 
+           correct = "", 
+           allow_retry = TRUE,
+           answer("i) Normalidad de los errores, ii) Homocedasticidad e independencia de los errores, iii) Media cero en los errores", message = "No, pero no...intentalo de nuevo!"),
+           answer("i) La variable respuesta debe ser binaria, ii) Independencia de los errores, iii) Debe haber poca o nula multicolinealidad",  correct = TRUE),
+           answer("i) La variable respuesta debe ser continua, ii) Independencia de los errores, iii) Debe existir multicolinealidad", message = "No...intentalo de nuevo!"),
+           answer("No necesitan cumplirse supuestos", message = "Incorrecto. Intenta de nuevo!."),
+           submit_button = "Enviar respuesta",
+           try_again_button = "Intentar de nuevo"),
+  caption = " "
+)
+```
+
+
+## **PROBLEMAS**
+
+### **Problema 1**
+Este tutorial cuenta con la base de datos "creditos" (la cual se puede acceder mediante la función data("creditos")), se cuenta con 780 registros de clientes que pidieron prestamos a una entidad bancaria, se tienen las variables:
+<div>
+  <ul>
+    <li> **DEFAULT:** indica si el cliente resultó moroso en las cuotas de su crédito, 1 indica que si y 0 que no.</li>
+    <li> **ANTIGUEDAD:** años que ha pertenecido el cliente en la entidad.</li>
+    <li> **CUOTA_TOTAL:** monto total del prestamo en pesos colombianos.</li>
+    <li> **INGRESOS:** ingresos mensuales del cliente en pesos colombianos.</li>
+  </ul>
+</div>
+
+Se quiere realizar un modelo de regresión logistico en donde se pueda predecir la probabilidad de que una persona resulte morosa.
+
+```{r}
+data("beer2")
+beer2
+```
+
+```{r}
+setwd("G:\\Mi unidad\\Maestria en CD\\Unidad2EST2\\data")
+load("creditos.rda")
+```
+
+### **Problema 1.1**
+**Realice un análisis exploratorio de las variables mediante la función plot.**
+
+```{r p0, exercise=TRUE, exercise.lines = 5}
+
+```
+```{r p0-hint}
+plot()
+```
+```{r p0-solution, fig.width=8, fig.height=5}
+plot(creditos)
+```
+
+
+### **Problema 1.2*
+**Calcule el modelo logistico con todas la covariables y muestre el resumen de este (summary).**
+```{r p1, exercise=TRUE, exercise.lines = 5}
+
+```
+```{r p1-hint}
+modelo = glm(DEFAULT ~ ,family=binomial(link="logit"), data= )
+```
+```{r p1-solution, fig.width=8, fig.height=5}
+modelo = glm(DEFAULT ~ ANTIUEDAD + EDAD + CUOTA_TOTAL + INGRESOS,family=binomial(link="logit"), data= creditos)
+summary(modelo)
+```
+
+### **Problema 1.3**
+```{r q7}
+quiz(
+  question("Mediante las pruebas individuales y con un nivel de significancia del 5%, se puede concluir que las siguientes variables SI tienen un efecto importante sobre la probabilidad de morosidad del cliente:" , 
+           correct = "", 
+           allow_retry = TRUE,
+           answer("Antiguedad, edad e ingresos", message = "No, pero no...intentalo de nuevo!"),
+           answer("Edad e ingresos", message = "Incorrecto. Intenta de nuevo!."),
+           answer("Todas las variables son significativas", message = "No...intentalo de nuevo!"),
+           answer("Antiguedad, cuota_total e ingresos", correct = TRUE),
+           submit_button = "Enviar respuesta",
+           try_again_button = "Intentar de nuevo"),
+  caption = " "
+)
+```
+
+
+
+
+
+
+
+
+
+
+
+
